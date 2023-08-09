@@ -2,6 +2,7 @@ import { styled } from 'styled-components';
 import img from '../../assets/images/login_background.png';
 import React from 'react';
 import { colors } from '../../styles/colors';
+import { mediaQueries } from '../../styles/media-queries';
 
 export const SideBanner = () => {
     return (
@@ -22,6 +23,10 @@ const BannerContainer = styled.aside`
     background-size: cover;
     background-repeat: no-repeat;
     width: 30%;
+
+    @media ${mediaQueries.mobile} {
+        display: none;
+    }
 `;
 
 const Cite = styled.cite`

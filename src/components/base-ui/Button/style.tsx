@@ -16,6 +16,7 @@ export const ButtonElement = styled.button<Omit<ButtonProps, 'label'>>`
     cursor: pointer;
     background: linear-gradient(#0000, rgb(0 0 0/15%)) top/100% 800%;
     transition: background-position 150ms ease-in;
+    width: max-content;
 
     &:hover {
         background-position: bottom;

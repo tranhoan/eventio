@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderElement } from './style';
+import { EventioLogo, HeaderElement } from './style';
 import { ReactComponent as Logo } from '../../../assets/icons/logo.svg';
 
 interface Props {}
@@ -7,7 +7,7 @@ interface Props {}
 export const Header = (props: Props) => {
     return (
         <HeaderElement>
-            <Logo />
+            <EventioLogo />
         </HeaderElement>
     );
 };
