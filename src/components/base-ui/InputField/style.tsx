@@ -1,0 +1,52 @@
+import { styled } from 'styled-components';
+import { colors } from '../../../styles/colors';
+
+export const InputFieldElement = styled.input`
+    border: none;
+    font-family: 'Hind';
+    font-size: 1.8rem;
+    font-weight: 300;
+    width: 100%;
+    color: ${colors.tunaGrey};
+    padding: 0;
+    &::placeholder {
+        color: ${colors.ghostGrey};
+    }
+    &:focus {
+        outline: none;
+    }
+
+    &:focus::placeholder {
+        transform: scale(0);
+    }
+`;
+
+export const Label = styled.div`
+    display: block;
+    font-weight: 300;
+    font-size: 1.4rem;
+    color: ${colors.ironGrey};
+    opacity: 0;
+    position: absolute;
+    transition:
+        transform 200ms ease-out,
+        opacity 200ms ease-out;
+`;
+
+export const InputFieldContainer = styled.label`
+    display: flex;
+    padding-bottom: 0.4rem;
+    width: 100%;
+    height: max-content;
+    position: relative;
+    border-bottom: 1px solid ${colors.lavenderGrey};
+
+    &:has(${InputFieldElement}:focus) {
+        border-bottom-color: ${colors.tunaGrey};
+    }
+
+    &:has(${InputFieldElement}:focus) ${Label} {
+        opacity: 1;
+        transform: translateY(-100%);
+    }
+`;

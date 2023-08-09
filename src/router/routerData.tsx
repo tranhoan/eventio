@@ -1,11 +1,11 @@
-import { ReactNode } from 'react'
-import React from 'react'
-import { Login } from '../pages/login/Login'
+import { ReactNode } from 'react';
+import React from 'react';
+import { Login } from '../pages/login/Login';
 
 interface RouterData {
-    title: string
-    path: string
-    element: ReactNode
+    title: string;
+    path: string;
+    element: ReactNode;
 }
 export const routerData: Array<RouterData> = [
     {
@@ -13,4 +13,4 @@ export const routerData: Array<RouterData> = [
         path: '/login',
         element: <Login />,
     },
-]
+];

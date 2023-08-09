@@ -1,7 +1,7 @@
-import { BrowserRouter } from 'react-router-dom'
-import { Router } from '../router/router'
-import React from 'react'
-import { GlobalStyle } from '../styles/GlobalStyle'
+import { BrowserRouter } from 'react-router-dom';
+import { Router } from '../router/router';
+import React from 'react';
+import { GlobalStyle } from '../styles/global';
 
 function App() {
     return (
@@ -9,7 +9,7 @@ function App() {
             <GlobalStyle />
             <Router />
         </BrowserRouter>
-    )
+    );
 }
 
-export default App
+export default App;
