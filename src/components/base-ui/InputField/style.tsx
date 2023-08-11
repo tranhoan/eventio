@@ -1,4 +1,5 @@
 import { css, styled } from 'styled-components';
+
 import { colors } from '../../../styles/colors';
 
 export const InputFieldElement = styled.input`
@@ -17,7 +18,7 @@ export const InputFieldElement = styled.input`
     }
 
     &:focus::placeholder {
-        transform: scale(0);
+        visibility: hidden;
     }
 `;
 
@@ -33,7 +34,7 @@ export const Label = styled.span`
         opacity 200ms ease-out;
 `;
 
-export const InputFieldContainer = styled.label<{ $error: string | undefined }>`
+export const InputFieldContainer = styled.label<{ $error: boolean }>`
     display: flex;
     padding-bottom: 0.4rem;
     width: 100%;
@@ -55,4 +56,12 @@ export const InputFieldContainer = styled.label<{ $error: string | undefined }>`
         opacity: 1;
         transform: translateY(-100%);
     }
+`;
+
+export const ErrorMessage = styled.p`
+    font-size: 1.4rem;
+    font-family: 'Hind';
+    font-weight: 200;
+    color: ${colors.baseRed};
+    margin: 0.4rem 0;
 `;

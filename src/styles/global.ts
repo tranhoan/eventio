@@ -3,7 +3,10 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`    
     #root {
         --baseRed: #FF4081;
+
         --baseWhite: #FFFFFF;
+        --ghostWhite: #F9F9FB;
+
         --successGreen: #22D486;
         --secondaryGreen: #1BE38B;
 
@@ -13,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
         --lavenderGrey: #DAE1E7;
         --ghostGrey: #C9CED3;
         --tunaGrey: #323C46;
+        --mistGrey: #D9DCE1;
 
         height: 100%;
     }

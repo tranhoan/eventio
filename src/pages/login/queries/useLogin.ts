@@ -1,9 +1,9 @@
 import { useMutation } from 'react-query';
-import { login } from '../../../api/services/auth';
 import { AxiosError } from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { login } from '../../../api/services/auth';
 import { Credentials, User } from '../../../api/types';
 import { useUserStore } from '../../../store/useUserStore';
-import { useNavigate } from 'react-router-dom';
 
 interface LoginError {
     message: string;

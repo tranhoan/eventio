@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
-import img from '../../assets/images/login_background.png';
 import React from 'react';
+import img from '../../assets/images/login_background.png';
 import { colors } from '../../styles/colors';
 import { mediaQueries } from '../../styles/media-queries';
 

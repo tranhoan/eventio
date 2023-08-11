@@ -1,8 +1,11 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 import React from 'react';
-import { SideBanner } from './SideBanner';
 import { Header } from '../base-ui/Header/Header';
+import { mediaQueries } from '../../styles/media-queries';
+import { colors } from '../../styles/colors';
+import { EventioLogo } from '../base-ui/Header/style';
+import { SideBanner } from './SideBanner';
 
 interface Props {
     children: string | ReactNode;
@@ -11,7 +14,7 @@ interface Props {
 export const LoginLayout = ({ children }: Props) => {
     return (
         <LoginContainer>
-            <Header />
+            <Header logoColor='light' />
             <SideBanner />
             <MainContent>{children}</MainContent>
         </LoginContainer>
@@ -21,6 +24,12 @@ export const LoginLayout = ({ children }: Props) => {
 const LoginContainer = styled.div`
     display: flex;
     height: 100%;
+
+    @media ${mediaQueries.mobile} {
+        & ${EventioLogo} path {
+            fill: ${colors.tunaGrey};
+        }
+    }
 `;
 
 const MainContent = styled.main`

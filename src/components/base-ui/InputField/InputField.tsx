@@ -1,10 +1,15 @@
-import React, { InputHTMLAttributes, forwardRef, useState } from 'react';
-import { InputFieldContainer, InputFieldElement, Label } from './style';
-import { ReactComponent as EyeIcon } from '../../../assets/icons/eye.svg';
+import React, { forwardRef, InputHTMLAttributes, useState } from 'react';
 
+import { ReactComponent as EyeIcon } from '../../../assets/icons/eye.svg';
+import {
+    ErrorMessage,
+    InputFieldContainer,
+    InputFieldElement,
+    Label,
+} from './style';
 export interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
-    error?: string;
+    error?: string | null;
 }
 
 export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
@@ -13,7 +18,7 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
         const passwordTypeValue = isPasswordShown ? 'text' : 'password';
         return (
             <>
-                <InputFieldContainer $error={error}>
+                <InputFieldContainer $error={error !== null ? true : false}>
                     <Label>{label}</Label>
                     <InputFieldElement
                         placeholder={label}
@@ -29,6 +34,7 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
                         />
                     )}
                 </InputFieldContainer>
+                {error && error !== '' && <ErrorMessage>{error}</ErrorMessage>}
             </>
         );
     }

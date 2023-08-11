@@ -1,7 +1,7 @@
-import { css, styled } from 'styled-components';
-import { ButtonProps } from './Button';
-import { colors } from '../../../styles/colors';
 import Lottie from 'lottie-react';
+import { css, styled } from 'styled-components';
+import { colors } from '../../../styles/colors';
+import { ButtonProps } from './types';
 
 interface TransientProps {
     $variant: ButtonProps['variant'];

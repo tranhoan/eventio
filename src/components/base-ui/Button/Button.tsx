@@ -1,14 +1,7 @@
-import React, { InputHTMLAttributes } from 'react';
-import { ButtonElement, ButtonLabel, Loader } from './style';
+import React from 'react';
 import loadingAnimation from '../../../assets/animations/spinner.json';
-
-export interface ButtonProps extends InputHTMLAttributes<HTMLButtonElement> {
-    variant: 'success' | 'error' | 'info';
-    buttonSize: 'small' | 'medium';
-    label: string;
-    isLoading?: boolean;
-}
-
+import { ButtonElement, ButtonLabel, Loader } from './style';
+import { ButtonProps } from './types';
 export const Button = ({
     label,
     buttonSize,
