@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import { css, styled } from 'styled-components';
 import { colors } from '../../../styles/colors';
 
 export const InputFieldElement = styled.input`
@@ -21,7 +21,7 @@ export const InputFieldElement = styled.input`
     }
 `;
 
-export const Label = styled.div`
+export const Label = styled.span`
     display: block;
     font-weight: 300;
     font-size: 1.4rem;
@@ -33,13 +33,19 @@ export const Label = styled.div`
         opacity 200ms ease-out;
 `;
 
-export const InputFieldContainer = styled.label`
+export const InputFieldContainer = styled.label<{ $error: string | undefined }>`
     display: flex;
     padding-bottom: 0.4rem;
     width: 100%;
     height: max-content;
     position: relative;
     border-bottom: 1px solid ${colors.lavenderGrey};
+
+    ${(props) =>
+        props.$error &&
+        css`
+            border-bottom-color: ${colors.baseRed};
+        `}
 
     &:has(${InputFieldElement}:focus) {
         border-bottom-color: ${colors.tunaGrey};

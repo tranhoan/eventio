@@ -3,7 +3,7 @@ import { ButtonElement } from '../../components/base-ui/Button/style';
 import { InputFieldContainer } from '../../components/base-ui/InputField/style';
 import { mediaQueries } from '../../styles/media-queries';
 
-export const LoginContainer = styled.div`
+export const LoginContainer = styled.section`
     width: clamp(32rem, 40%, 480px);
 
     ${InputFieldContainer} {

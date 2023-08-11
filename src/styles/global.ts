@@ -1,8 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import hindLight from '../assets/fonts/Hind/Hind-Light.ttf';
-import hindRegular from '../assets/fonts/Hind/Hind-Regular.ttf';
-import hindMedium from '../assets/fonts/Hind/Hind-Medium.ttf';
-import playfair from '../assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf';
 
 export const GlobalStyle = createGlobalStyle`    
     #root {
@@ -31,36 +27,4 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 62.5%;
         font-family: 'Hind', 'Playfair Display', serif
     };
-
-    @font-face {
-        font-family: 'Hind';
-        font-style: normal;
-        font-weight: 300;
-        font-display: swap;
-        src: url(${hindLight}) format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Hind';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(${hindRegular}) format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Hind';
-        font-style: normal;
-        font-weight: 500;
-        font-display: swap;
-        src: url(${hindMedium}) format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Playfair Display';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(${playfair}) format('truetype');
-    }
 `;

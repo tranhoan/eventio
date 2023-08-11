@@ -41,7 +41,7 @@ const Quote = styled.blockquote`
     line-height: 1.2;
 `;
 
-const QuoteContainer = styled.span`
+const QuoteContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
