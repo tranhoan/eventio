@@ -13,4 +13,9 @@ export const routerData: Array<RouterData> = [
         path: '/login',
         element: <Login />,
     },
+    {
+        title: 'dashboard',
+        path: '/dashboard',
+        element: <>dashboard</>,
+    },
 ];
