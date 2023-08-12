@@ -1,10 +1,10 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { persist, createJSONStorage } from 'zustand/middleware';
 import { User } from '../api/types';
 
 interface UserState {
     user: User | null;
-    setUser: (user: User) => void;
+    setUser: (user: User | null) => void;
 }
 
 export const useUserStore = create<UserState>()(
@@ -15,7 +15,7 @@ export const useUserStore = create<UserState>()(
         }),
         {
             name: 'user-storage', // unique name
-            getStorage: () => sessionStorage,
+            storage: createJSONStorage(() => sessionStorage),
         }
     )
 );

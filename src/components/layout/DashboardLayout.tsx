@@ -18,5 +18,6 @@ export const DashboardLayout = ({ children }: Props) => {
 
 const DashboardContainer = styled.div`
     width: 100%;
+    height: 100%;
     background-color: ${colors.ghostWhite};
 `;
