@@ -1,6 +1,6 @@
 import React from 'react';
-import loadingAnimation from '../../../assets/animations/spinner.json';
-import { ButtonElement, ButtonLabel, Loader } from './style';
+import { Loader } from '../Loader/Loader';
+import { ButtonElement, ButtonLabel } from './style';
 import { ButtonProps } from './types';
 export const Button = ({
     label,
@@ -18,11 +18,7 @@ export const Button = ({
             $isLoading={isLoading}
         >
             <ButtonLabel>{label}</ButtonLabel>
-            <Loader
-                aria-label='loader'
-                animationData={loadingAnimation}
-                loop={true}
-            />
+            <Loader />
         </ButtonElement>
     );
 };

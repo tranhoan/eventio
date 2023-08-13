@@ -28,7 +28,6 @@ apiClient.interceptors.response.use(
         const { setAccessToken, setRefreshToken } = useAuthStore.getState();
 
         if (response.headers['authorization']) {
-            console.log('new access token', response.headers['authorization']);
             setAccessToken(response.headers['authorization']);
         }
 
@@ -37,17 +36,22 @@ apiClient.interceptors.response.use(
         }
         return response;
     },
+    // TODO type this, also handle error state
     async function (error: AxiosError<{ code: string; message: string }>) {
-        const { refreshToken: cachedRefreshToken, accessToken } =
-            useAuthStore.getState();
-
+        const { refreshToken: cachedRefreshToken } = useAuthStore.getState();
+        const originalRequest = error.config;
         if (
             error.response?.data.code === 'UNAUTHORIZED' &&
             cachedRefreshToken
         ) {
             await refreshToken(cachedRefreshToken);
-            axios.defaults.headers.common['Authorization'] = accessToken;
-            return axios(error.config as AxiosRequestConfig);
+
+            //retrying the request after setting new access token
+            const accessToken = useAuthStore.getState().accessToken;
+            if (originalRequest) {
+                originalRequest.headers.Authorization = accessToken;
+            }
+            return apiClient(originalRequest as AxiosRequestConfig);
         }
         return Promise.reject(error);
     }

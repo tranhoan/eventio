@@ -10,7 +10,7 @@ interface HeaderElementProps {
 export const EventioLogo = styled(Logo)``;
 
 export const HeaderElement = styled.header<HeaderElementProps>`
-    position: fixed;
+    position: sticky;
     z-index: 10;
     display: flex;
     justify-content: space-between;
@@ -18,7 +18,7 @@ export const HeaderElement = styled.header<HeaderElementProps>`
     top: 0;
     left: 0;
     right: 0;
-    margin: 4rem;
+    padding: 4rem;
 
     ${EventioLogo} {
         width: clamp(2.3rem, 2vw, 2.9rem);

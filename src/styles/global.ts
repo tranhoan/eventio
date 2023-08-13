@@ -1,7 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
+import { colors } from './colors';
 
 export const GlobalStyle = createGlobalStyle`    
     #root {
+        height: 100%;
+    }
+
+    html {
         --baseRed: #FF4081;
 
         --baseWhite: #FFFFFF;
@@ -20,17 +25,19 @@ export const GlobalStyle = createGlobalStyle`
         --silverGrey: #CACDD0;
         --boulderGrey: #7D7878;
 
-        height: 100%;
     }
-
+    
     body, html{ 
         margin: 0;
         box-sizing: border-box;
-        -ms-overflow-style: none;
-        overflow: hidden;
         height: 100%;
         /* 62.5% of 16px browser font size is 10px, for better base calculations with rem */
         font-size: 62.5%;
         font-family: 'Hind', 'Playfair Display', serif
+        
     };
+
+    body {
+        background-color: ${colors.ghostWhite};
+    }
 `;

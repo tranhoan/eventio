@@ -1,8 +1,10 @@
 import React from 'react';
-import { Event } from '../../api/types';
-import { Button } from '../base-ui/Button/Button';
-import { useUserStore } from '../../store/useUserStore';
-import { useMutateEvent } from '../../pages/dashboard/queries/useJoinEvent';
+import { Event } from '../../../api/types';
+import { Button } from '../../base-ui/Button/Button';
+import { useUserStore } from '../../../store/useUserStore';
+import { useMutateEvent } from '../../../pages/dashboard/queries/useJoinEvent';
+import { ViewType } from '../../../types';
+import { getDateFormat } from '../../../utils/date';
 import {
     AttendContainer,
     AttendCount,
@@ -10,20 +12,22 @@ import {
     DateCreated,
     Description,
     EventContainer,
-    EventTitle,
     Title,
     User,
 } from './style';
 
 interface Props {
     event: Event;
+    view: ViewType;
 }
 
-export const EventCard = ({ event }: Props) => {
-    const { createdAt, title, owner, description, attendees, capacity, id } =
+export const EventCard = ({ event, view }: Props) => {
+    const { startsAt, title, owner, description, attendees, capacity, id } =
         event;
     const ownerName = `${owner.firstName} ${owner.lastName}`;
     const capacityLabel = `${attendees.length} of ${capacity}`;
+    const eventDate = new Date(startsAt);
+
     const { user } = useUserStore();
     const { mutate: joinEvent, isLoading: isJoining } = useMutateEvent(
         id,
@@ -63,15 +67,13 @@ export const EventCard = ({ event }: Props) => {
         return attendButton;
     };
     return (
-        <EventContainer>
-            <DateCreated>{createdAt}</DateCreated>
-            <EventTitle>
-                <Title>{title}</Title>
-                <Author>{ownerName}</Author>
-            </EventTitle>
+        <EventContainer $view={view}>
+            <DateCreated>{getDateFormat(eventDate)}</DateCreated>
+            <Title>{title}</Title>
+            <Author>{ownerName}</Author>
             <Description>{description}</Description>
             <AttendContainer>
-                <AttendCount as='footer'>
+                <AttendCount>
                     <User />
                     {capacityLabel}
                 </AttendCount>

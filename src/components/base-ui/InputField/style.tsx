@@ -9,6 +9,7 @@ export const InputFieldElement = styled.input`
     font-weight: 300;
     width: 100%;
     color: ${colors.tunaGrey};
+    background: none;
     padding: 0;
     &::placeholder {
         color: ${colors.ghostGrey};

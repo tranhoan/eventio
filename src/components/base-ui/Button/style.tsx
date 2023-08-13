@@ -1,6 +1,6 @@
-import Lottie from 'lottie-react';
 import { css, styled } from 'styled-components';
 import { colors } from '../../../styles/colors';
+import { LoaderElement } from '../Loader/Loader';
 import { ButtonProps } from './types';
 
 interface TransientProps {
@@ -10,16 +10,6 @@ interface TransientProps {
 }
 
 export const ButtonLabel = styled.span``;
-
-export const Loader = styled(Lottie)`
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    width: 10%;
-`;
 
 export const ButtonElement = styled.button<TransientProps>`
     font-family: 'Hind';
@@ -51,7 +41,7 @@ export const ButtonElement = styled.button<TransientProps>`
         visibility: ${(props) => (props.$isLoading ? 'hidden' : 'visible')};
     }
 
-    ${Loader} {
+    ${LoaderElement} {
         visibility: ${(props) => (props.$isLoading ? 'visible' : 'hidden')};
     }
 
@@ -60,6 +50,7 @@ export const ButtonElement = styled.button<TransientProps>`
             ? css`
                   padding: 1.2rem 9rem;
                   font-size: 1.6rem;
+                  min-width: 10rem;
               `
             : css`
                   padding: 0.8rem 3.2rem;

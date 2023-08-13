@@ -4,7 +4,7 @@ import React from 'react';
 import { Header } from '../base-ui/Header/Header';
 import { mediaQueries } from '../../styles/media-queries';
 import { colors } from '../../styles/colors';
-import { EventioLogo } from '../base-ui/Header/style';
+import { EventioLogo, HeaderElement } from '../base-ui/Header/style';
 import { SideBanner } from './SideBanner';
 import { MainContent } from './style';
 
@@ -25,6 +25,10 @@ export const LoginLayout = ({ children }: Props) => {
 const LoginContainer = styled.div`
     display: flex;
     height: 100%;
+
+    ${HeaderElement} {
+        position: fixed;
+    }
 
     @media ${mediaQueries.mobile} {
         & ${EventioLogo} path {

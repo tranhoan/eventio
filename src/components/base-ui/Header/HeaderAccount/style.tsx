@@ -23,7 +23,6 @@ export const DropdownMenu = styled.ul`
     box-sizing: border-box;
     width: 100%;
     background-color: ${colors.baseWhite};
-    font-family: 'Hind';
     font-size: 1.4rem;
     box-shadow: 0px 2px 3px 0px #0000001c;
     display: flex;

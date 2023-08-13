@@ -4,5 +4,6 @@ const createQuery = (width: number, axis = 'width') => {
 
 export const mediaQueries = {
     mobile: createQuery(480),
+    tablet: createQuery(800),
     create: createQuery,
 };
