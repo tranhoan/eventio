@@ -6,6 +6,7 @@ import { mediaQueries } from '../../styles/media-queries';
 import { colors } from '../../styles/colors';
 import { EventioLogo } from '../base-ui/Header/style';
 import { SideBanner } from './SideBanner';
+import { MainContent } from './style';
 
 interface Props {
     children: string | ReactNode;
@@ -30,11 +31,4 @@ const LoginContainer = styled.div`
             fill: ${colors.tunaGrey};
         }
     }
-`;
-
-const MainContent = styled.main`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
 `;

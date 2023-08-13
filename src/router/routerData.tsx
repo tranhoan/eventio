@@ -8,15 +8,21 @@ interface RouterData {
     path: string;
     element: ReactNode;
 }
+
+export const routes = {
+    login: '/login',
+    dashboard: '/dashboard',
+};
+
 export const routerData: Array<RouterData> = [
     {
         title: 'login',
-        path: '/login',
+        path: routes.login,
         element: <Login />,
     },
     {
         title: 'dashboard',
-        path: '/dashboard',
+        path: routes.dashboard,
         element: <Dashboard />,
     },
 ];

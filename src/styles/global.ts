@@ -17,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
         --ghostGrey: #C9CED3;
         --tunaGrey: #323C46;
         --mistGrey: #D9DCE1;
+        --silverGrey: #CACDD0;
+        --boulderGrey: #7D7878;
 
         height: 100%;
     }

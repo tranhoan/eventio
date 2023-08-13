@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { login } from '../../../api/services/auth';
 import { Credentials, User } from '../../../api/types';
 import { useUserStore } from '../../../store/useUserStore';
+import { routes } from '../../../router/routerData';
 
 interface LoginError {
     message: string;
@@ -19,7 +20,7 @@ export const useLogin = () => {
         mutationFn: login,
         onSuccess: (data) => {
             setUser(data);
-            navigate('/dashboard');
+            navigate(routes.dashboard);
         },
     });
 };

@@ -10,4 +10,6 @@ export const colors = {
     ghostGrey: 'var(--ghostGrey)',
     tunaGrey: 'var(--tunaGrey)',
     mistGrey: 'var(--mistGrey)',
+    silverGrey: 'var(--silverGrey)',
+    boulderGrey: 'var(--boulderGrey)',
 };

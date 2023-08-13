@@ -10,6 +10,7 @@ import {
 import { InputField } from '../../components/base-ui/InputField/InputField';
 import { Credentials } from '../../api/types';
 import { useUserStore } from '../../store/useUserStore';
+import { routes } from '../../router/routerData';
 import { useLogin } from './queries/useLogin';
 import { LoginContainer, LoginForm } from './style';
 
@@ -34,7 +35,7 @@ export const Login = () => {
 
     useEffect(() => {
         if (user) {
-            navigate('/dashboard');
+            navigate(routes.dashboard);
         }
     }, [navigate, user]);
 

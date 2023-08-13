@@ -8,3 +8,10 @@ export const login = async ({ email, password }: Credentials) => {
     });
     return response.data;
 };
+
+export const refreshToken = async (oldToken: string) => {
+    const response = await apiClient.post<string>('/auth/refresh-token', {
+        refreshToken: oldToken,
+    });
+    return response.data;
+};
