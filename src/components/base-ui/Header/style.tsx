@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 import { colors } from '../../../styles/colors';
 import { ReactComponent as Logo } from '../../../assets/icons/logo.svg';
+import { flexboxCenter } from '../../style';
 import { HeaderProps } from './types';
 
 interface HeaderElementProps {
@@ -10,11 +11,9 @@ interface HeaderElementProps {
 export const EventioLogo = styled(Logo)``;
 
 export const HeaderElement = styled.header<HeaderElementProps>`
+    ${flexboxCenter}
     position: sticky;
     z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     top: 0;
     left: 0;
     right: 0;

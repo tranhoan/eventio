@@ -3,10 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { LoginLayout } from '../../components/layout/LoginLayout';
 import { Button } from '../../components/base-ui/Button/Button';
-import {
-    PrimaryDescription,
-    PrimaryHeading,
-} from '../../components/base-ui/style';
+import { PrimaryDescription, PrimaryHeading } from '../../components/style';
 import { InputField } from '../../components/base-ui/InputField/InputField';
 import { Credentials } from '../../api/types';
 import { useUserStore } from '../../store/useUserStore';

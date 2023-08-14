@@ -2,6 +2,7 @@ import { styled } from 'styled-components';
 import { colors } from '../../../../styles/colors';
 import { mediaQueries } from '../../../../styles/media-queries';
 import { ReactComponent as DropdownIcon } from '../../../../assets/icons/dropdown.svg';
+import { flexboxCenter } from '../../../style';
 
 export const Account = styled.button`
     display: flex;
@@ -51,9 +52,8 @@ export const DropdownContainer = styled.div<{ $isActive: boolean }>`
 `;
 
 export const Initials = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${flexboxCenter}
+
     background-color: ${colors.mistGrey};
     color: ${colors.coolGrey};
     border-radius: 50%;

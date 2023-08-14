@@ -1,6 +1,6 @@
 import { css, styled } from 'styled-components';
 import { colors } from '../../../styles/colors';
-import { PrimaryHeading } from '../../base-ui/style';
+import { PrimaryHeading, flexboxSpaceBetween } from '../../style';
 import { ReactComponent as UserIcon } from '../../../assets/icons/user.svg';
 import { ViewType } from '../../../types';
 import { mediaQueries } from '../../../styles/media-queries';
@@ -87,9 +87,7 @@ export const Description = styled.p`
 `;
 
 export const AttendContainer = styled.span`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    ${flexboxSpaceBetween}
     align-self: flex-end;
     margin-top: 2.4rem;
 `;

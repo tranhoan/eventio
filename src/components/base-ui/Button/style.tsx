@@ -1,6 +1,7 @@
 import { css, styled } from 'styled-components';
 import { colors } from '../../../styles/colors';
 import { LoaderElement } from '../Loader/Loader';
+import { buttonStyles, flexboxCenter } from '../../style';
 import { ButtonProps } from './types';
 
 interface TransientProps {
@@ -12,17 +13,11 @@ interface TransientProps {
 export const ButtonLabel = styled.span``;
 
 export const ButtonElement = styled.button<TransientProps>`
-    font-family: 'Hind';
-    text-transform: uppercase;
+    ${buttonStyles}
+    ${flexboxCenter}
     border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: ${colors.baseWhite};
-    border: none;
-    letter-spacing: 0.1rem;
     font-weight: bold;
-    cursor: pointer;
     background: linear-gradient(#0000, rgb(0 0 0/15%)) top/100% 800%;
     transition: background-position 150ms ease-in;
     width: max-content;

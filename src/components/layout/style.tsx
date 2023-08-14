@@ -1,8 +1,7 @@
 import { styled } from 'styled-components';
+import { flexboxCenter } from '../style';
 
 export const MainContent = styled.main`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${flexboxCenter}
     width: 100%;
 `;
