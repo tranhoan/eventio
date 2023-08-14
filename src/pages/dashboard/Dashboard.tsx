@@ -11,7 +11,7 @@ import { EventList, EventSection } from './style';
 export const Dashboard = () => {
     const { data, isFetching } = useEvents();
     const [view, setView] = useState<ViewType>('grid');
-    const [dateFilter, setDateFilter] = useState<EventDateFilter>('future');
+    const [dateFilter, setDateFilter] = useState<EventDateFilter>('all');
 
     const getFilteredEvents = (events: Array<Event>) => {
         const todayDate = new Date();

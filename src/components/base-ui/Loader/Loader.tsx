@@ -4,13 +4,7 @@ import { styled } from 'styled-components';
 import loadingAnimation from '../../../assets/animations/spinner.json';
 
 export const Loader = () => {
-    return (
-        <LoaderElement
-            aria-label='loader'
-            animationData={loadingAnimation}
-            loop={true}
-        />
-    );
+    return <LoaderElement animationData={loadingAnimation} loop={true} />;
 };
 
 export const LoaderElement = styled(Lottie)`
