@@ -9,7 +9,7 @@ import { useEvents } from './queries/useEvents';
 import { EventList, EventSection } from './style';
 
 export const Dashboard = () => {
-    const { data, isFetching } = useEvents();
+    const { data, isFetching, isError, isSuccess } = useEvents();
     const [view, setView] = useState<ViewType>('grid');
     const [dateFilter, setDateFilter] = useState<EventDateFilter>('all');
 
@@ -42,11 +42,11 @@ export const Dashboard = () => {
                     currentDateFilter={dateFilter}
                     setDateFilter={setDateFilter}
                 />
-                {isFetching ? (
-                    <Loader />
-                ) : (
+                {isFetching && <Loader />}
+                {isError && <>Failed to get events</>}
+                {isSuccess && (
                     <EventList $view={view}>
-                        {data && getFilteredEvents(data)}
+                        {getFilteredEvents(data)}
                     </EventList>
                 )}
             </EventSection>

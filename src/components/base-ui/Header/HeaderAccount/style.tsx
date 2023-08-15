@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { colors } from '../../../../styles/colors';
 import { mediaQueries } from '../../../../styles/media-queries';
 import { ReactComponent as DropdownIcon } from '../../../../assets/icons/dropdown.svg';
-import { flexboxCenter } from '../../../style';
+import { flexboxCenter, smallFont } from '../../../style';
 
 export const Account = styled.button`
     display: flex;
@@ -15,6 +15,7 @@ export const Account = styled.button`
 export const Dropdown = styled(DropdownIcon)``;
 
 export const DropdownMenu = styled.ul`
+    ${smallFont}
     position: absolute;
     top: 100%;
     right: 0;
@@ -24,7 +25,6 @@ export const DropdownMenu = styled.ul`
     box-sizing: border-box;
     width: 100%;
     background-color: ${colors.baseWhite};
-    font-size: 1.4rem;
     box-shadow: 0px 2px 3px 0px ${colors.shadowGrey};
     display: flex;
     justify-content: center;
@@ -53,12 +53,12 @@ export const DropdownContainer = styled.div<{ $isActive: boolean }>`
 
 export const Initials = styled.div`
     ${flexboxCenter}
+    ${smallFont}
 
     background-color: ${colors.mistGrey};
     color: ${colors.coolGrey};
     border-radius: 50%;
     font-family: 'Hind';
-    font-size: 1.4rem;
     width: clamp(3.2rem, 2vw, 4rem);
     height: clamp(3.2rem, 2vw, 4rem);
     margin-right: 0.8rem;
@@ -66,7 +66,8 @@ export const Initials = styled.div`
 
 export const Name = styled.span`
     font-family: 'Hind';
-    font-size: 1.4rem;
+    ${smallFont}
+
     color: ${colors.coolGrey};
     margin-right: 0.8rem;
 

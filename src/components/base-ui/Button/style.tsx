@@ -18,7 +18,14 @@ export const ButtonElement = styled.button<TransientProps>`
     border-radius: 4px;
     color: ${colors.baseWhite};
     font-weight: bold;
-    background: linear-gradient(#0000, rgb(0 0 0/15%)) top/100% 800%;
+    --backgroundHoverColor: rgb(0 0 0/15%);
+    ${(props) =>
+        props.$variant === 'info' &&
+        css`
+            --backgroundHoverColor: rgb(255 255 255/15%);
+        `}
+
+    background: linear-gradient(#0000, var(--backgroundHoverColor)) top/100% 800%;
     transition: background-position 150ms ease-in;
     width: max-content;
     position: relative;
@@ -47,11 +54,14 @@ export const ButtonElement = styled.button<TransientProps>`
                   font-size: 1.6rem;
                   box-sizing: border-box;
                   white-space: nowrap;
-                  width: clamp(10rem, 50vw, 24rem);
+                  min-width: 10rem;
+                  max-width: 24rem;
+                  line-height: 3.2rem;
               `
             : css`
                   padding: 0.8rem 3.2rem;
                   font-size: 1.4rem;
+                  line-height: 2rem;
               `};
 
     ${(props) =>

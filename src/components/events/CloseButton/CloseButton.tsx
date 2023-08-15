@@ -4,6 +4,7 @@ import { colors } from '../../../styles/colors';
 import { routes } from '../../../router/routerData';
 import { ReactComponent as TimesIcon } from '../../../assets/icons/times.svg';
 import { mediaQueries } from '../../../styles/media-queries';
+import { mediumFont } from '../../style';
 
 export const CloseButton = () => {
     return (
@@ -15,11 +16,11 @@ export const CloseButton = () => {
 };
 
 const CloseButtonElement = styled.a`
+    ${mediumFont}
     color: ${colors.tunaGrey};
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    font-size: 1.6rem;
     font-weight: 300;
     text-decoration: none;
 `;

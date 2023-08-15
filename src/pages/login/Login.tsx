@@ -9,7 +9,7 @@ import { Credentials } from '../../api/types';
 import { useUserStore } from '../../store/useUserStore';
 import { routes } from '../../router/routerData';
 import { useLogin } from './queries/useLogin';
-import { LoginContainer, LoginForm } from './style';
+import { LoginForm } from './style';
 
 export const Login = () => {
     const {
@@ -38,40 +38,38 @@ export const Login = () => {
 
     return (
         <LoginLayout>
-            <LoginContainer>
-                <PrimaryHeading>Sign In to Eventio.</PrimaryHeading>
-                <PrimaryDescription $isError={submitError !== null}>
-                    {descriptionLabel}
-                </PrimaryDescription>
-                <LoginForm onSubmit={handleSubmit((data) => login(data))}>
-                    <InputField
-                        label='Email'
-                        type='email'
-                        autoComplete='email'
-                        {...register('email', {
-                            required: 'Email is required',
-                        })}
-                        error={getInputError('email')}
-                    />
-                    <InputField
-                        label='Password'
-                        type='password'
-                        autoComplete='current-password'
-                        {...register('password', {
-                            required: 'Password is required',
-                        })}
-                        error={getInputError('password')}
-                    />
-                    <Button
-                        label='sign in'
-                        variant='success'
-                        buttonSize='medium'
-                        type='submit'
-                        isLoading={isLoading}
-                        disabled={isLoading}
-                    />
-                </LoginForm>
-            </LoginContainer>
+            <PrimaryHeading>Sign In to Eventio.</PrimaryHeading>
+            <PrimaryDescription $isError={submitError !== null}>
+                {descriptionLabel}
+            </PrimaryDescription>
+            <LoginForm onSubmit={handleSubmit((data) => login(data))}>
+                <InputField
+                    label='Email'
+                    type='email'
+                    autoComplete='email'
+                    {...register('email', {
+                        required: 'Email is required',
+                    })}
+                    error={getInputError('email')}
+                />
+                <InputField
+                    label='Password'
+                    type='password'
+                    autoComplete='current-password'
+                    {...register('password', {
+                        required: 'Password is required',
+                    })}
+                    error={getInputError('password')}
+                />
+                <Button
+                    label='sign in'
+                    variant='success'
+                    buttonSize='medium'
+                    type='submit'
+                    isLoading={isLoading}
+                    disabled={isLoading}
+                />
+            </LoginForm>
         </LoginLayout>
     );
 };

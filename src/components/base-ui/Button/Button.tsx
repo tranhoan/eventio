@@ -11,11 +11,10 @@ export const Button = ({
 }: ButtonProps) => {
     return (
         <ButtonElement
-            {...other}
-            type='submit'
             $buttonSize={buttonSize}
             $variant={variant}
             $isLoading={isLoading}
+            {...other}
         >
             <ButtonLabel>{label}</ButtonLabel>
             <Loader />

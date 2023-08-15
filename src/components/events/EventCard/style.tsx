@@ -1,6 +1,12 @@
 import { css, styled } from 'styled-components';
 import { colors } from '../../../styles/colors';
-import { PrimaryHeading, cardStyles, flexboxSpaceBetween } from '../../style';
+import {
+    PrimaryHeading,
+    cardStyles,
+    flexboxSpaceBetween,
+    mediumFont,
+    smallFont,
+} from '../../style';
 import { ReactComponent as UserIcon } from '../../../assets/icons/user.svg';
 import { ViewType } from '../../../types';
 import { mediaQueries } from '../../../styles/media-queries';
@@ -11,7 +17,7 @@ export const EventContainer = styled.article<{ $view: ViewType }>`
     grid-template-rows: auto auto auto 1fr;
     place-content: start stretch;
     font-family: 'Hind';
-    padding: 2.4rem;
+    padding: 3.2rem;
 
     ${(props) =>
         props.$view === 'list' &&
@@ -21,12 +27,14 @@ export const EventContainer = styled.article<{ $view: ViewType }>`
             grid-template-columns: 2fr 1.5fr 1fr 1fr 1fr;
             place-content: center start;
             align-items: center;
-            padding: 1.6rem 3.2rem;
+            padding: 1.2rem 3.2rem;
             gap: 3.2rem;
 
             ${Title} {
                 order: 1;
                 margin: 0;
+                font-size: 1.8rem;
+                line-height: 2.4rem;
             }
             ${Description} {
                 order: 2;
@@ -40,6 +48,7 @@ export const EventContainer = styled.article<{ $view: ViewType }>`
             }
             ${DateCreated} {
                 order: 4;
+                margin: 0;
             }
             ${AttendContainer} {
                 order: 5;
@@ -63,13 +72,14 @@ export const EventContainer = styled.article<{ $view: ViewType }>`
 `;
 
 export const DateCreated = styled.span`
-    font-size: 1.4rem;
+    ${smallFont}
     font-weight: 300;
+    margin-bottom: 1rem;
     color: ${colors.silverGrey};
 `;
 
 export const Author = styled.span`
-    font-size: 1.4rem;
+    ${smallFont}
     color: ${colors.boulderGrey};
     margin-bottom: 3.2rem;
 `;
@@ -79,7 +89,7 @@ export const Title = styled(PrimaryHeading)`
 `;
 
 export const Description = styled.p`
-    font-size: 1.4rem;
+    ${mediumFont}
     color: ${colors.coolGrey};
     margin: 0;
 `;
@@ -88,6 +98,7 @@ export const AttendContainer = styled.span`
     ${flexboxSpaceBetween}
     align-self: flex-end;
     margin-top: 2.4rem;
+    margin-top: 3.2rem;
 `;
 
 export const User = styled(UserIcon)`
@@ -95,9 +106,9 @@ export const User = styled(UserIcon)`
 `;
 
 export const AttendCount = styled.span`
+    ${smallFont}
     display: flex;
     align-items: center;
     white-space: nowrap;
-    font-size: 1.4rem;
     color: ${colors.coolGrey};
 `;

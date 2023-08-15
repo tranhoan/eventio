@@ -1,11 +1,13 @@
 import { css, styled } from 'styled-components';
 
 import { colors } from '../../../styles/colors';
+import { smallFont } from '../../style';
 
 export const InputFieldElement = styled.input`
     border: none;
     font-family: 'Hind';
     font-size: 1.8rem;
+    line-height: 2.4rem;
     font-weight: 300;
     width: 100%;
     color: ${colors.tunaGrey};
@@ -25,9 +27,9 @@ export const InputFieldElement = styled.input`
 `;
 
 export const Label = styled.span`
+    ${smallFont}
     display: block;
     font-weight: 300;
-    font-size: 1.4rem;
     color: ${colors.ironGrey};
     opacity: 0;
     z-index: -1;
@@ -71,7 +73,7 @@ export const InputFieldContainer = styled.label<{ $error: boolean }>`
 `;
 
 export const ErrorMessage = styled.p`
-    font-size: 1.4rem;
+    ${smallFont}
     font-family: 'Hind';
     font-weight: 200;
     color: ${colors.baseRed};

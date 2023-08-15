@@ -129,7 +129,8 @@ const CreateEventForm = styled.form`
     flex-direction: column;
     padding: 4rem 3.2rem;
     box-sizing: border-box;
-    width: clamp(47rem, 7vw, 48rem);
+    margin: 0.8rem;
+    width: clamp(47rem, 27vw, 48rem);
 
     ${InputFieldContainer} {
         margin-bottom: 4rem;

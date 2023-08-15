@@ -4,11 +4,31 @@ interface DescriptionProps {
     $isError?: boolean;
 }
 
-export const PrimaryHeading = styled.h1`
+export const smallFont = css`
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+`;
+
+export const mediumFont = css`
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+`;
+
+export const mediumLargeFont = css`
+    font-size: 1.8rem;
+    line-height: 4.8rem;
+`;
+
+export const largeFont = css`
     font-size: 2.8rem;
+    line-height: 4.8rem;
+`;
+
+export const PrimaryHeading = styled.h1`
+    ${largeFont}
     color: ${colors.tunaGrey};
     font-weight: 400;
-    margin-bottom: 0.6rem;
+    margin: 0;
 `;
 
 export const PrimaryDescription = styled.p<DescriptionProps>`

@@ -7,6 +7,7 @@ import { buttonStyles, flexboxSpaceBetween } from '../../style';
 export const FilterContainer = styled.div`
     ${flexboxSpaceBetween}
     margin-bottom: 4rem;
+    width: 100%;
 `;
 
 export const DateFilter = styled.ul`

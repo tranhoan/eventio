@@ -2,12 +2,12 @@ import { css, styled } from 'styled-components';
 import { ViewType } from '../../../types';
 import { mediaQueries } from '../../../styles/media-queries';
 import { LoaderElement } from '../../../components/base-ui/Loader/Loader';
-import { colors } from '../../../styles/colors';
 
 export const EventList = styled.div<{ $view: ViewType }>`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 1.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(39rem, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1.5rem;
     transition: all 200ms ease;
 
     ${(props) =>

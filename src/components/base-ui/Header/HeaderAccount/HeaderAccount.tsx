@@ -21,6 +21,7 @@ export const HeaderAccount = ({ user }: Props) => {
     const initials = `${firstName.charAt(0)}${lastName.charAt(0)}`;
     const fullName = `${firstName} ${lastName}`;
     const { setUser } = useUserStore();
+
     return (
         <DropdownContainer $isActive={isDropdownActive}>
             <Account

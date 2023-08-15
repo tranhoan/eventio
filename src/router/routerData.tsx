@@ -19,6 +19,12 @@ const CreateForm = React.lazy(() =>
     }))
 );
 
+const NotFound = React.lazy(() =>
+    import('../pages/errors/404/NotFound').then((module) => ({
+        default: module.NotFound,
+    }))
+);
+
 export const routes = {
     login: '/login',
     dashboard: '/events/dashboard',
@@ -67,5 +73,13 @@ export const router = createBrowserRouter([
                 ),
             },
         ],
+    },
+    {
+        path: '*',
+        element: (
+            <LoaderSuspense>
+                <NotFound />
+            </LoaderSuspense>
+        ),
     },
 ]);
