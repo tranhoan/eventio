@@ -2,7 +2,7 @@
   "name": "eventio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tranhoan.github.io/eventio/",
+  "homepage": "https://tranhoan.github.io/eventio/login",
   "dependencies": {
     "@tanstack/react-query": "^4.32.6",
     "@tanstack/react-query-devtools": "^4.32.6",
