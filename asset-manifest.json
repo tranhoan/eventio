@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.js": "/eventio/static/js/main.c062a583.js",
+    "static/js/491.2d4d5b38.chunk.js": "/eventio/static/js/491.2d4d5b38.chunk.js",
+    "static/js/120.fbf48986.chunk.js": "/eventio/static/js/120.fbf48986.chunk.js",
+    "static/js/182.7aae436b.chunk.js": "/eventio/static/js/182.7aae436b.chunk.js",
+    "static/js/470.053e18e1.chunk.js": "/eventio/static/js/470.053e18e1.chunk.js",
+    "static/js/296.e0e99872.chunk.js": "/eventio/static/js/296.e0e99872.chunk.js",
+    "static/js/134.74bdb097.chunk.js": "/eventio/static/js/134.74bdb097.chunk.js",
+    "static/media/login_background.png": "/eventio/static/media/login_background.cda92566b55f6fe03f1b.png",
+    "index.html": "/eventio/index.html",
+    "static/media/logo.svg": "/eventio/static/media/logo.a462e6338670f36111c2a339d66543fa.svg",
+    "static/media/eye.svg": "/eventio/static/media/eye.9b8d824ff303a606cd41e88a4f75feba.svg",
+    "static/media/user.svg": "/eventio/static/media/user.910e28fab6131c91bb11a08ec231cd0c.svg",
+    "static/media/times.svg": "/eventio/static/media/times.9e7cff4e68408d3f6cc27bd12926c43c.svg",
+    "static/media/grid.svg": "/eventio/static/media/grid.b673e0234d439a77b3de9b9d38160da0.svg",
+    "static/media/list.svg": "/eventio/static/media/list.924fe3502ad2ec970461bc1c12cceb0b.svg",
+    "static/media/plus.svg": "/eventio/static/media/plus.91000c6c7e01c386dbe011ce4da761a7.svg",
+    "static/media/dropdown.svg": "/eventio/static/media/dropdown.2d00ef6ac342db79b45ed57e347def65.svg",
+    "main.c062a583.js.map": "/eventio/static/js/main.c062a583.js.map",
+    "491.2d4d5b38.chunk.js.map": "/eventio/static/js/491.2d4d5b38.chunk.js.map",
+    "120.fbf48986.chunk.js.map": "/eventio/static/js/120.fbf48986.chunk.js.map",
+    "182.7aae436b.chunk.js.map": "/eventio/static/js/182.7aae436b.chunk.js.map",
+    "470.053e18e1.chunk.js.map": "/eventio/static/js/470.053e18e1.chunk.js.map",
+    "296.e0e99872.chunk.js.map": "/eventio/static/js/296.e0e99872.chunk.js.map",
+    "134.74bdb097.chunk.js.map": "/eventio/static/js/134.74bdb097.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c062a583.js"
+  ]
+}
