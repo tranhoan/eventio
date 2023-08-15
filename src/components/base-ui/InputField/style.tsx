@@ -11,6 +11,7 @@ export const InputFieldElement = styled.input`
     color: ${colors.tunaGrey};
     background: none;
     padding: 0;
+
     &::placeholder {
         color: ${colors.ghostGrey};
     }
@@ -29,6 +30,7 @@ export const Label = styled.span`
     font-size: 1.4rem;
     color: ${colors.ironGrey};
     opacity: 0;
+    z-index: -1;
     position: absolute;
     transition:
         transform 200ms ease-out,
@@ -55,7 +57,16 @@ export const InputFieldContainer = styled.label<{ $error: boolean }>`
 
     &:has(${InputFieldElement}:focus) ${Label} {
         opacity: 1;
+        z-index: 1;
         transform: translateY(-100%);
+    }
+
+    /* A not very ideal hack to keep date and time inputs the same height as other inputs.
+     By default these are 2px taller than other types for some reason */
+
+    &:has(input[type='date']),
+    &:has(input[type='time']) {
+        padding-bottom: 0.2rem;
     }
 `;
 
@@ -65,4 +76,6 @@ export const ErrorMessage = styled.p`
     font-weight: 200;
     color: ${colors.baseRed};
     margin: 0.4rem 0;
+    position: absolute;
+    top: 100%;
 `;

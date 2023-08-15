@@ -1,7 +1,8 @@
 import { css, styled } from 'styled-components';
-import { ViewType } from '../../types';
-import { mediaQueries } from '../../styles/media-queries';
-import { LoaderElement } from '../../components/base-ui/Loader/Loader';
+import { ViewType } from '../../../types';
+import { mediaQueries } from '../../../styles/media-queries';
+import { LoaderElement } from '../../../components/base-ui/Loader/Loader';
+import { colors } from '../../../styles/colors';
 
 export const EventList = styled.div<{ $view: ViewType }>`
     display: grid;

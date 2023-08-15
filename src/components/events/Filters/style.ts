@@ -59,14 +59,24 @@ export const DateSelect = styled.select`
     background: url(${dropdown});
     background-repeat: no-repeat;
     background-position: right center;
-    display: none;
 
     &:focus {
         outline: none;
     }
+`;
+
+export const DateSelectContainer = styled.div`
+    display: none;
 
     @media ${mediaQueries.mobile}, ${mediaQueries.tablet} {
-        display: block;
+        display: flex;
     }
+`;
+
+export const DateSelectLabel = styled.label`
+    ${buttonStyles}
+    font-size: 1.2rem;
+    color: ${colors.aluminiumGrey};
+    margin-right: 0.6rem;
 `;
 export const View = styled.div``;

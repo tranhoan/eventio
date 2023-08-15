@@ -23,3 +23,8 @@ export interface Event {
     attendees: Array<User>;
     owner: User;
 }
+
+export type CreateEventParams = Pick<
+    Event,
+    'title' | 'description' | 'startsAt' | 'capacity'
+>;

@@ -16,26 +16,47 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
     ({ label, type, error, ...other }: InputFieldProps, ref) => {
         const [isPasswordShown, setIsPasswordShown] = useState(false);
         const passwordTypeValue = isPasswordShown ? 'text' : 'password';
+
+        // we reassign the initial type to hide the pickers or to show/hide password value
+        const adjustedType =
+            type === 'date' || type === 'time'
+                ? 'text'
+                : type === 'password'
+                ? passwordTypeValue
+                : type;
+
+        // in case for date and time we need to reassign its type on focus and pass it as props
+        const focusObject =
+            type === 'date' || type === 'time'
+                ? {
+                      onFocus: (
+                          e: React.FocusEvent<HTMLInputElement, Element>
+                      ) => (e.target.type = type),
+                      onBlur: (
+                          e: React.FocusEvent<HTMLInputElement, Element>
+                      ) => (e.target.type = 'text'),
+                  }
+                : {};
+
         return (
-            <>
-                <InputFieldContainer $error={error !== null ? true : false}>
-                    <Label>{label}</Label>
-                    <InputFieldElement
-                        placeholder={label}
-                        ref={ref}
-                        type={type === 'password' ? passwordTypeValue : type}
-                        {...other}
+            <InputFieldContainer $error={error == null ? false : true}>
+                <Label>{label}</Label>
+                <InputFieldElement
+                    placeholder={label}
+                    ref={ref}
+                    type={adjustedType}
+                    {...other}
+                    {...focusObject}
+                />
+                {type === 'password' && (
+                    <EyeIcon
+                        onClick={() =>
+                            setIsPasswordShown((prevShown) => !prevShown)
+                        }
                     />
-                    {type === 'password' && (
-                        <EyeIcon
-                            onClick={() =>
-                                setIsPasswordShown((prevShown) => !prevShown)
-                            }
-                        />
-                    )}
-                </InputFieldContainer>
+                )}
                 {error && error !== '' && <ErrorMessage>{error}</ErrorMessage>}
-            </>
+            </InputFieldContainer>
         );
     }
 );

@@ -1,36 +1,37 @@
 import { ReactNode, Suspense } from 'react';
 import React from 'react';
+import { createBrowserRouter } from 'react-router-dom';
 import { Loader } from '../components/base-ui/Loader/Loader';
+import { DashboardLayout } from '../components/layout/DashboardLayout';
 
 const Login = React.lazy(() =>
     import('../pages/login/Login').then((module) => ({ default: module.Login }))
 );
 
 const Dashboard = React.lazy(() =>
-    import('../pages/dashboard/Dashboard').then((module) => ({
+    import('../pages/events/dashboard/Dashboard').then((module) => ({
         default: module.Dashboard,
     }))
 );
-
-interface RouterData {
-    title: string;
-    path: string;
-    element: ReactNode;
-}
+const CreateForm = React.lazy(() =>
+    import('../pages/events/createEvent/CreateEvent').then((module) => ({
+        default: module.CreateEvent,
+    }))
+);
 
 export const routes = {
     login: '/login',
-    dashboard: '/dashboard',
+    dashboard: '/events/dashboard',
+    createEvent: '/events/create',
 };
 
 const LoaderSuspense = ({ children }: { children: ReactNode }) => {
     return <Suspense fallback={<Loader />}>{children}</Suspense>;
 };
 
-export const routerData: Array<RouterData> = [
+export const router = createBrowserRouter([
     {
-        title: 'login',
-        path: routes.login,
+        path: '/',
         element: (
             <LoaderSuspense>
                 <Login />
@@ -38,12 +39,33 @@ export const routerData: Array<RouterData> = [
         ),
     },
     {
-        title: 'dashboard',
-        path: routes.dashboard,
+        path: 'login',
         element: (
             <LoaderSuspense>
-                <Dashboard />
+                <Login />
             </LoaderSuspense>
         ),
     },
-];
+    {
+        path: 'events',
+        element: <DashboardLayout />,
+        children: [
+            {
+                path: 'dashboard',
+                element: (
+                    <LoaderSuspense>
+                        <Dashboard />
+                    </LoaderSuspense>
+                ),
+            },
+            {
+                path: 'create',
+                element: (
+                    <LoaderSuspense>
+                        <CreateForm />
+                    </LoaderSuspense>
+                ),
+            },
+        ],
+    },
+]);

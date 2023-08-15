@@ -2,7 +2,7 @@ import React from 'react';
 import { Event } from '../../../api/types';
 import { Button } from '../../base-ui/Button/Button';
 import { useUserStore } from '../../../store/useUserStore';
-import { useMutateEvent } from '../../../pages/dashboard/queries/useJoinEvent';
+import { useMutateEvent } from '../../../pages/events/dashboard/queries/useJoinEvent';
 import { ViewType } from '../../../types';
 import { getDateFormat } from '../../../utils/date';
 import {

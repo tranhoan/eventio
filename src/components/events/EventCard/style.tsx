@@ -1,19 +1,17 @@
 import { css, styled } from 'styled-components';
 import { colors } from '../../../styles/colors';
-import { PrimaryHeading, flexboxSpaceBetween } from '../../style';
+import { PrimaryHeading, cardStyles, flexboxSpaceBetween } from '../../style';
 import { ReactComponent as UserIcon } from '../../../assets/icons/user.svg';
 import { ViewType } from '../../../types';
 import { mediaQueries } from '../../../styles/media-queries';
 
 export const EventContainer = styled.article<{ $view: ViewType }>`
-    box-shadow: 0px 2px 3px 0px #0000001c;
-    background-color: ${colors.baseWhite};
+    ${cardStyles}
     display: grid;
     grid-template-rows: auto auto auto 1fr;
     place-content: start stretch;
     font-family: 'Hind';
     padding: 2.4rem;
-    border-radius: 0.4rem;
 
     ${(props) =>
         props.$view === 'list' &&

@@ -24,9 +24,10 @@ export const GlobalStyle = createGlobalStyle`
         --mistGrey: #D9DCE1;
         --silverGrey: #CACDD0;
         --boulderGrey: #7D7878;
+        --shadowGrey: rgba(0, 0, 0, 0.01);
 
     }
-    
+
     body, html{ 
         margin: 0;
         box-sizing: border-box;

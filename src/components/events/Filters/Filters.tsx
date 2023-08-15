@@ -5,6 +5,8 @@ import { EventDateFilter, ViewType } from '../../../types';
 import {
     DateFilter,
     DateSelect,
+    DateSelectContainer,
+    DateSelectLabel,
     FilterButton,
     FilterContainer,
     View,
@@ -51,15 +53,18 @@ export const Filters = ({
                 </li>
             </DateFilter>
 
-            <DateSelect
-                onChange={(e) =>
-                    setDateFilter(e.target.value as EventDateFilter)
-                }
-            >
-                <option value='all'>All events</option>
-                <option value='future'>Future events</option>
-                <option value='past'>Past events</option>
-            </DateSelect>
+            <DateSelectContainer>
+                <DateSelectLabel>Show:</DateSelectLabel>
+                <DateSelect
+                    onChange={(e) =>
+                        setDateFilter(e.target.value as EventDateFilter)
+                    }
+                >
+                    <option value='all'>All events</option>
+                    <option value='future'>Future events</option>
+                    <option value='past'>Past events</option>
+                </DateSelect>
+            </DateSelectContainer>
 
             <View>
                 <FilterButton

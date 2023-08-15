@@ -25,7 +25,7 @@ export const DropdownMenu = styled.ul`
     width: 100%;
     background-color: ${colors.baseWhite};
     font-size: 1.4rem;
-    box-shadow: 0px 2px 3px 0px #0000001c;
+    box-shadow: 0px 2px 3px 0px ${colors.shadowGrey};
     display: flex;
     justify-content: center;
 

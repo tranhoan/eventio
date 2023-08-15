@@ -1,7 +1,7 @@
 import { css, styled } from 'styled-components';
 import { colors } from '../styles/colors';
 interface DescriptionProps {
-    $isError: boolean;
+    $isError?: boolean;
 }
 
 export const PrimaryHeading = styled.h1`
@@ -36,4 +36,10 @@ export const flexboxSpaceBetween = css`
     display: flex;
     justify-content: space-between;
     align-items: center;
+`;
+
+export const cardStyles = css`
+    box-shadow: 0px 2px 3px 0px ${colors.shadowGrey};
+    background-color: ${colors.baseWhite};
+    border-radius: 0.4rem;
 `;

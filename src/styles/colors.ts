@@ -13,4 +13,5 @@ export const colors = {
     silverGrey: 'var(--silverGrey)',
     boulderGrey: 'var(--boulderGrey)',
     aluminiumGrey: 'var(--aluminiumGrey)',
+    shadowGrey: 'var(--shadowGrey)',
 };

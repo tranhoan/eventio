@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from 'react-query';
-import { joinEvent, leaveEvent } from '../../../api/services/events';
+import { joinEvent, leaveEvent } from '../../../../api/services/events';
 
 export const useMutateEvent = (eventId: string, type: 'leave' | 'join') => {
     const queryCache = useQueryClient();

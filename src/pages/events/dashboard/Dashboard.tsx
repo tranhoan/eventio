@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { DashboardLayout } from '../../components/layout/DashboardLayout';
-import { EventCard } from '../../components/events/EventCard/EventCard';
-import { Filters } from '../../components/events/Filters/Filters';
-import { EventDateFilter, ViewType } from '../../types';
-import { Loader } from '../../components/base-ui/Loader/Loader';
-import { Event } from '../../api/types';
+import { EventCard } from '../../../components/events/EventCard/EventCard';
+import { Filters } from '../../../components/events/Filters/Filters';
+import { EventDateFilter, ViewType } from '../../../types';
+import { Loader } from '../../../components/base-ui/Loader/Loader';
+import { Event } from '../../../api/types';
+import { PlusButton } from '../../../components/events/PlusButton/PlusButton';
 import { useEvents } from './queries/useEvents';
 import { EventList, EventSection } from './style';
 
@@ -34,7 +34,7 @@ export const Dashboard = () => {
     };
 
     return (
-        <DashboardLayout>
+        <>
             <EventSection>
                 <Filters
                     setView={setView}
@@ -50,6 +50,7 @@ export const Dashboard = () => {
                     </EventList>
                 )}
             </EventSection>
-        </DashboardLayout>
+            <PlusButton />
+        </>
     );
 };

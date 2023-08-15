@@ -43,9 +43,11 @@ export const ButtonElement = styled.button<TransientProps>`
     ${(props) =>
         props.$buttonSize === 'medium'
             ? css`
-                  padding: 1.2rem 9rem;
+                  padding: 1.4rem 9rem;
                   font-size: 1.6rem;
-                  min-width: 10rem;
+                  box-sizing: border-box;
+                  white-space: nowrap;
+                  width: clamp(10rem, 50vw, 24rem);
               `
             : css`
                   padding: 0.8rem 3.2rem;
