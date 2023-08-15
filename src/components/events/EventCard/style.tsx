@@ -35,6 +35,10 @@ export const EventContainer = styled.article<{ $view: ViewType }>`
                 margin: 0;
                 font-size: 1.8rem;
                 line-height: 2.4rem;
+
+                @media ${mediaQueries.mobile}, ${mediaQueries.tablet} {
+                    line-height: 4.8rem;
+                }
             }
             ${Description} {
                 order: 2;
