@@ -1,6 +1,4 @@
 import React, { forwardRef, InputHTMLAttributes, useState } from 'react';
-
-import { styled } from 'styled-components';
 import { ReactComponent as EyeIcon } from '../../../assets/icons/eye.svg';
 import {
     ErrorMessage,
