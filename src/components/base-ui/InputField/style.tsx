@@ -70,6 +70,12 @@ export const InputFieldContainer = styled.label<{ $error: boolean }>`
     &:has(input[type='time']) {
         padding-bottom: 0.2rem;
     }
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
 `;
 
 export const ErrorMessage = styled.p`

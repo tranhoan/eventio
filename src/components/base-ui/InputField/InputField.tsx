@@ -1,5 +1,6 @@
 import React, { forwardRef, InputHTMLAttributes, useState } from 'react';
 
+import { styled } from 'styled-components';
 import { ReactComponent as EyeIcon } from '../../../assets/icons/eye.svg';
 import {
     ErrorMessage,
@@ -49,11 +50,15 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
                     {...focusObject}
                 />
                 {type === 'password' && (
-                    <EyeIcon
+                    <button
+                        type='button'
+                        aria-label='toggle password visibility'
                         onClick={() =>
                             setIsPasswordShown((prevShown) => !prevShown)
                         }
-                    />
+                    >
+                        <EyeIcon />
+                    </button>
                 )}
                 {error && error !== '' && <ErrorMessage>{error}</ErrorMessage>}
             </InputFieldContainer>
