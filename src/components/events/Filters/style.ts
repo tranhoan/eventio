@@ -2,7 +2,7 @@ import { css, styled } from 'styled-components';
 import { colors } from '../../../styles/colors';
 import dropdown from '../../../assets/icons/dropdown.svg';
 import { mediaQueries } from '../../../styles/media-queries';
-import { buttonStyles, flexboxSpaceBetween } from '../../style';
+import { buttonStyles, flexboxCenter, flexboxSpaceBetween } from '../../style';
 
 export const FilterContainer = styled.div`
     ${flexboxSpaceBetween}
@@ -26,10 +26,12 @@ export const DateFilter = styled.ul`
 
 export const FilterButton = styled.button<{ $isActive: boolean }>`
     ${buttonStyles}
+    ${flexboxCenter}
     background: none;
     color: ${colors.aluminiumGrey};
     transition: color 100ms ease-in;
     font-size: 1.2rem;
+    padding-inline: 1.2rem 0;
 
     ${(props) =>
         props.$isActive &&
@@ -80,4 +82,6 @@ export const DateSelectLabel = styled.label`
     color: ${colors.aluminiumGrey};
     margin-right: 0.6rem;
 `;
-export const View = styled.div``;
+export const View = styled.div`
+    display: flex;
+`;

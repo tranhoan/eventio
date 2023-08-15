@@ -23,7 +23,7 @@ export const DropdownMenu = styled.ul`
     list-style: none;
     padding: 2.4rem 0.8rem;
     box-sizing: border-box;
-    width: 100%;
+    width: 120%;
     background-color: ${colors.baseWhite};
     box-shadow: 0px 2px 3px 0px ${colors.shadowGrey};
     display: flex;
@@ -54,6 +54,7 @@ export const DropdownContainer = styled.div<{ $isActive: boolean }>`
 export const Initials = styled.div`
     ${flexboxCenter}
     ${smallFont}
+    line-height: initial;
 
     background-color: ${colors.mistGrey};
     color: ${colors.coolGrey};

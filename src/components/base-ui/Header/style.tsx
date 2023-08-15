@@ -17,7 +17,7 @@ export const HeaderElement = styled.header<HeaderElementProps>`
     top: 0;
     left: 0;
     right: 0;
-    padding: 4rem;
+    padding: clamp(2.4rem, 3vw, 3.2rem) clamp(2.4rem, 5vw, 4rem);
 
     ${EventioLogo} {
         width: clamp(2.3rem, 2vw, 2.9rem);
