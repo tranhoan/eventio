@@ -13,7 +13,10 @@ This component will be quite similar the login form but with extra steps.
 ### Sign out drop down styling
 The styling for the drop down is not finished. Please complete the styling in `HeaderAccount.tsx`
 
-### Possible consolidatons
+### Possible consolidatons and bugs
+
+#### Replace native date/time pickers with library
+Native date/time picker breaks when used on mobile because of custom styles of our input. 
 
 #### Extract and structure commonly used css
 At the moment some common styles for components are not structured in a way that would allow better scalability of the project. 
