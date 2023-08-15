@@ -26,7 +26,7 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
                 ? passwordTypeValue
                 : type;
 
-        // in case for date and time we need to reassign its type on focus and pass it as props
+        // in case of date and time we need to reassign its type on focus and pass it as props
         const focusObject =
             type === 'date' || type === 'time'
                 ? {

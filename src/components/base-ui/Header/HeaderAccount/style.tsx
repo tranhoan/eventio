@@ -10,6 +10,7 @@ export const Account = styled.button`
     border: none;
     background: none;
     cursor: pointer;
+    padding: 0;
 `;
 
 export const Dropdown = styled(DropdownIcon)``;

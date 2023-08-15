@@ -24,6 +24,11 @@ export const InputFieldElement = styled.input`
     &:focus::placeholder {
         visibility: hidden;
     }
+
+    &[type='date'],
+    &[type='time'] {
+        min-height: 2.5rem;
+    }
 `;
 
 export const Label = styled.span`
